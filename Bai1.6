@@ -1,0 +1,39 @@
+/*bai 1.6
+da thuc gom co he so va bac da thuc */
+#include<stdio.h>
+#include<conio.h>
+
+struct DaThuc
+{
+	int Bac,HeSo;
+};
+
+typedef struct DaThuc DATHUC;
+void NhapDaThuc(DATHUC &);
+int XuatDaThuc(DATHUC);
+
+void NhapDaThuc(DATHUC &dt)
+{
+	printf("Nhap he so:");
+	scanf("%d",&dt.HeSo);
+	fflush(stdin);
+	printf("Nhap bac da thuc:");
+	scanf("%d",&dt.Bac);
+}
+
+int XuatDaThuc(DATHUC dt)
+{
+	for(int i=dt.Bac;i>=0;i--)
+	{
+		printf(" %d.%d.x^%d +",dt.HeSo,i,i);
+	}
+}
+
+int main()
+{
+	DATHUC dt;
+	NhapDaThuc(dt);
+	XuatDaThuc(dt);
+	getch();
+	return 0;
+}
