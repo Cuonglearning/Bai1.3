@@ -1,0 +1,41 @@
+/*bai 1.3
+Mot diem trong mat phang gom co ten diem va toa do diem */
+#include<stdio.h>
+#include<conio.h>
+#include<cctype>
+
+struct Diem2D
+{
+	char Diem;
+	int HoanhDo,TungDo;
+};
+
+typedef struct Diem2D DIEM2D;
+
+void NhapDiem2D(DIEM2D &);
+void XuatDiem2D(DIEM2D);
+
+void NhapDiem2D(Diem2D &d)
+{
+	printf("Nhap ten diem:");
+	scanf("%c",&d.Diem);
+	fflush(stdin);
+	printf("Nhap hoanh do:");
+	scanf("%d",&d.HoanhDo);
+	printf("Nhap tung do:");
+	scanf("%d",&d.TungDo);
+}
+
+void XuatDiem2D(DIEM2D d)
+{
+	printf("%c(%d;%d)",toupper(d.Diem),d.HoanhDo,d.TungDo);
+}
+int main()
+{
+	Diem2D d;
+	NhapDiem2D(d);
+	XuatDiem2D(d);
+	
+	getch();
+	return 0;
+}
