@@ -1,0 +1,43 @@
+/*bai 1.4
+Mot diem trong mat phang Oxyz gom co ten diem va hoanh do, tung do, cao do */
+#include<stdio.h>
+#include<conio.h>
+#include<cctype>
+
+struct Diem3D
+{
+	char Diem;
+	int HoanhDo,TungDo,CaoDo;
+};
+
+typedef struct Diem3D DIEM3D;
+
+void NhapDiem3D(DIEM3D &);
+void XuatDiem3D(DIEM3D);
+
+void NhapDiem3D(Diem3D &d)
+{
+	printf("Nhap ten diem:");
+	scanf("%c",&d.Diem);
+	fflush(stdin);
+	printf("Nhap hoanh do:");
+	scanf("%d",&d.HoanhDo);
+	printf("Nhap tung do:");
+	scanf("%d",&d.TungDo);
+	printf("Nhap cao do:");
+	scanf("%d",&d.CaoDo);
+}
+
+void XuatDiem3D(DIEM3D d)
+{
+	printf("%c(%d;%d;%d)",toupper(d.Diem),d.HoanhDo,d.TungDo,d.CaoDo);
+}
+int main()
+{
+	Diem3D d;
+	NhapDiem3D(d);
+	XuatDiem3D(d);
+	
+	getch();
+	return 0;
+}
